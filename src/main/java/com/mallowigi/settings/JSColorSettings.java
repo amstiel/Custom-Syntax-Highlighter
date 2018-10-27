@@ -29,13 +29,13 @@ public class JSColorSettings extends BaseColorSettings {
       DefaultLanguageHighlighterColors.KEYWORD);
   private static final TextAttributesKey VARIABLE = ObjectUtils.notNull(TextAttributesKey.find("JS.LOCAL_VARIABLE"),
       DefaultLanguageHighlighterColors.LOCAL_VARIABLE);
-  private static final TextAttributesKey FUNCTION = ObjectUtils.notNull(JSAnnotator.FUNCTION);
-  private static final TextAttributesKey THIS_SUPER = ObjectUtils.notNull(JSAnnotator.THIS_SUPER);
-  private static final TextAttributesKey MODULE = ObjectUtils.notNull(JSAnnotator.MODULE);
-  private static final TextAttributesKey DEBUGGER = ObjectUtils.notNull(JSAnnotator.DEBUGGER);
-  private static final TextAttributesKey NULL = ObjectUtils.notNull(JSAnnotator.NULL);
-  private static final TextAttributesKey VAL = ObjectUtils.notNull(JSAnnotator.VAL);
-  private static final TextAttributesKey FUNCTION_NAME = ObjectUtils.notNull(JSAnnotator.FUNCTION);
+  private static final TextAttributesKey FUNCTION = JSAnnotator.FUNCTION;
+  private static final TextAttributesKey THIS_SUPER = JSAnnotator.THIS_SUPER;
+  private static final TextAttributesKey MODULE = JSAnnotator.MODULE;
+  private static final TextAttributesKey DEBUGGER = JSAnnotator.DEBUGGER;
+  private static final TextAttributesKey NULL = JSAnnotator.NULL;
+  private static final TextAttributesKey VAL = JSAnnotator.VAL;
+  private static final TextAttributesKey FUNCTION_NAME = JSAnnotator.FUNCTION;
 
   static {
     JS_ATTRIBUTES = new AttributesDescriptor[]{

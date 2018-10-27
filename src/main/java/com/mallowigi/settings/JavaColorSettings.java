@@ -26,10 +26,10 @@ public class JavaColorSettings extends BaseColorSettings {
   @NonNls
   static final Map<String, TextAttributesKey> JAVA_DESCRIPTORS = new THashMap<>();
 
-  private static final TextAttributesKey JAVA_KEYWORD = ObjectUtils.notNull(JavaAnnotator.JAVA_KEYWORD);
-  private static final TextAttributesKey THIS_SUPER = ObjectUtils.notNull(JavaAnnotator.THIS_SUPER);
-  private static final TextAttributesKey MODIFIER = ObjectUtils.notNull(JavaAnnotator.MODIFIER);
-  private static final TextAttributesKey STATIC_FINAL = ObjectUtils.notNull(JavaAnnotator.STATIC_FINAL);
+  private static final TextAttributesKey JAVA_KEYWORD = JavaAnnotator.JAVA_KEYWORD;
+  private static final TextAttributesKey THIS_SUPER = JavaAnnotator.THIS_SUPER;
+  private static final TextAttributesKey MODIFIER = JavaAnnotator.MODIFIER;
+  private static final TextAttributesKey STATIC_FINAL = JavaAnnotator.STATIC_FINAL;
 
   static {
     JAVA_ATTRIBUTES = new AttributesDescriptor[]{

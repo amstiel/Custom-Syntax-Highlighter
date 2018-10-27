@@ -24,7 +24,7 @@ public class TSColorSettings extends BaseColorSettings {
   @NonNls
   private static final Map<String, TextAttributesKey> TS_DESCRIPTORS = new THashMap<>();
 
-  private static final TextAttributesKey PRIVATE = ObjectUtils.notNull(TSAnnotator.PRIVATE);
+  private static final TextAttributesKey PRIVATE = TSAnnotator.PRIVATE;
 
   static {
     TS_ATTRIBUTES = new AttributesDescriptor[]{
