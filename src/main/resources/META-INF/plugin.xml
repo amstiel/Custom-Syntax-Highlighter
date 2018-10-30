@@ -41,9 +41,9 @@
     <depends>com.intellij.modules.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <annotator language="JavaScript" implementationClass="com.mallowigi.annotators.JSAnnotator" order="first"/>
-        <annotator language="TypeScript" implementationClass="com.mallowigi.annotators.TSAnnotator" order="first"/>
-        <annotator language="JAVA" implementationClass="com.mallowigi.annotators.JavaAnnotator" order="first"/>
+        <annotator language="JavaScript" implementationClass="com.mallowigi.annotators.JSAnnotator"/>
+        <annotator language="TypeScript" implementationClass="com.mallowigi.annotators.TSAnnotator"/>
+        <annotator language="JAVA" implementationClass="com.mallowigi.annotators.JavaAnnotator"/>
 
         <colorSettingsPage implementation="com.mallowigi.settings.JSColorSettings"/>
         <colorSettingsPage implementation="com.mallowigi.settings.TSColorSettings"/>
