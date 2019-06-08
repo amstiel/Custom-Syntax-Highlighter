@@ -2,6 +2,7 @@
   ~ The MIT License (MIT)
   ~
   ~ Copyright (c) 2018 Elior Boukhobza
+  ~ Copyright (c) 2019 Alexey Kunitsky
   ~
   ~ Permission is hereby granted, free of charge, to any person obtaining a copy
   ~ of this software and associated documentation files (the "Software"), to deal
@@ -44,10 +45,12 @@
         <annotator language="JavaScript" implementationClass="com.mallowigi.annotators.JSAnnotator"/>
         <annotator language="TypeScript" implementationClass="com.mallowigi.annotators.TSAnnotator"/>
         <annotator language="JAVA" implementationClass="com.mallowigi.annotators.JavaAnnotator"/>
+        <annotator language="PHP" implementationClass="com.mallowigi.annotators.PHPAnnotator"/>
 
         <colorSettingsPage implementation="com.mallowigi.settings.JSColorSettings"/>
         <colorSettingsPage implementation="com.mallowigi.settings.TSColorSettings"/>
         <colorSettingsPage implementation="com.mallowigi.settings.JavaColorSettings"/>
+        <colorSettingsPage implementation="com.mallowigi.settings.PHPColorSettings"/>
 
     </extensions>
 

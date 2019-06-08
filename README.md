@@ -37,6 +37,13 @@ This plugin adds more _Color Scheme_ settings for _JavaScript, TypeScript and Ja
 - this, super
 - static, final
 
+**PHP**:
+- private, public, protected
+- $this, self
+- static, final
+- use, namespace
+- function
+
 --------------------
 
 ## Development
