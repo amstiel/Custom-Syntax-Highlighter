@@ -15,6 +15,7 @@ public class PHPAnnotator extends BaseAnnotator {
   public static final TextAttributesKey THIS_SELF = TextAttributesKey.createTextAttributesKey("PHP.THIS_SELF", PHP_KEYWORD);
   public static final TextAttributesKey USE_NAMESPACE = TextAttributesKey.createTextAttributesKey("PHP.USE_NAMESPACE", PHP_KEYWORD);
   public static final TextAttributesKey FUNCTION = TextAttributesKey.createTextAttributesKey("PHP.FUNCTION", PHP_KEYWORD);
+  public static final TextAttributesKey CLASS_EXTENDS = TextAttributesKey.createTextAttributesKey("PHP.CLASS_EXTENDS", PHP_KEYWORD);
 
   @Override
   protected TextAttributesKey getKeywordKind(@NotNull final PsiElement element) {
@@ -39,6 +40,10 @@ public class PHPAnnotator extends BaseAnnotator {
         break;
       case "function":
         kind = FUNCTION;
+        break;
+      case "class":
+      case "extends":
+        kind = CLASS_EXTENDS;
         break;
     }
     return kind;

@@ -34,6 +34,7 @@ public class PHPColorSettings extends BaseColorSettings {
   private static final TextAttributesKey MODIFIER = PHPAnnotator.MODIFIER;
   private static final TextAttributesKey STATIC_FINAL = PHPAnnotator.STATIC_FINAL;
   private static final TextAttributesKey USE_NAMESPACE = PHPAnnotator.USE_NAMESPACE;
+  private static final TextAttributesKey CLASS_EXTENDS = PHPAnnotator.CLASS_EXTENDS;
 
   static {
     PHP_ATTRIBUTES = new AttributesDescriptor[]{
@@ -42,6 +43,7 @@ public class PHPColorSettings extends BaseColorSettings {
         new AttributesDescriptor("Keywords: private, public, protected", PHPColorSettings.MODIFIER),
         new AttributesDescriptor("Keywords: static, final", PHPColorSettings.STATIC_FINAL),
         new AttributesDescriptor("Keywords: use, namespace", PHPColorSettings.USE_NAMESPACE),
+        new AttributesDescriptor("Keywords: class, extends", PHPColorSettings.CLASS_EXTENDS),
     };
 
     PHPColorSettings.PHP_DESCRIPTORS.putAll(PHPColorSettings.createAdditionalHlAttrs());
@@ -56,6 +58,7 @@ public class PHPColorSettings extends BaseColorSettings {
     descriptors.put("static", PHPColorSettings.STATIC_FINAL);
     descriptors.put("modifier", PHPColorSettings.MODIFIER);
     descriptors.put("this", PHPColorSettings.THIS_SELF);
+    descriptors.put("class", PHPColorSettings.CLASS_EXTENDS);
 
     return descriptors;
   }
@@ -81,7 +84,7 @@ public class PHPColorSettings extends BaseColorSettings {
       "\n" +
       "<use>use</use> SomeClass" +
       "\n" +
-      "<static>final</static> class MyClass extends MyOtherClass\n" +
+      "<static>final</static> <class>class</class> MyClass <class>extends</class> MyOtherClass\n" +
       "{\n" +
       "    <modifier>public</modifier> const SINGLE = 0;\n" +
       "    <modifier>private</modifier> <var>$variable</var>;\n" +
