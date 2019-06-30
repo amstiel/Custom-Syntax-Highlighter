@@ -1,9 +1,3 @@
-<div align="center">
-  <a href="https://www.material-theme.com">
-<img src="logo.svg" width="320" height="320" alt="logo"></img>
-</a>
-</div>
-
 # Custom Syntax Highlighter Plugin
 
 This is a Jetbrains plugin showcasing a solution to the problem of custom syntax highlighters (https://youtrack.jetbrains.com/issue/IDEABKL-5473)
@@ -43,6 +37,7 @@ This plugin adds more _Color Scheme_ settings for _JavaScript, TypeScript and Ja
 - static, final
 - use, namespace
 - function
+- class, extends
 
 --------------------
 
