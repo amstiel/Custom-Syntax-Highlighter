@@ -47,7 +47,7 @@ public class TSColorSettings extends BaseColorSettings {
   @Nullable
   @Override
   public Icon getIcon() {
-    return AllIcons.FileTypes.TypeScript;
+    return AllIcons.General.ActualZoom;
   }
 
   @NotNull
