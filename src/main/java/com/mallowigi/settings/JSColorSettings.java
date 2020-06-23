@@ -36,15 +36,23 @@ public class JSColorSettings extends BaseColorSettings {
   private static final TextAttributesKey NULL = JSAnnotator.NULL;
   private static final TextAttributesKey VAL = JSAnnotator.VAL;
   private static final TextAttributesKey FUNCTION_NAME = JSAnnotator.FUNCTION;
+  private static final TextAttributesKey ASYNC = JSAnnotator.ASYNC;
+  private static final TextAttributesKey AWAIT = JSAnnotator.AWAIT;
+  private static final TextAttributesKey IF_ELSE = JSAnnotator.IF_ELSE;
+  private static final TextAttributesKey SWITCH_CASE = JSAnnotator.SWITCH_CASE;
 
   static {
     JS_ATTRIBUTES = new AttributesDescriptor[]{
         new AttributesDescriptor("Keywords: this, super", JSColorSettings.THIS_SUPER),
-        new AttributesDescriptor("Keywords: module, import, export, from", JSColorSettings.MODULE),
+        new AttributesDescriptor("Keywords: module, import, export, from, as, default", JSColorSettings.MODULE),
         new AttributesDescriptor("Keywords: debugger", JSColorSettings.DEBUGGER),
         new AttributesDescriptor("Keywords: null, undefined", JSColorSettings.NULL),
         new AttributesDescriptor("Keywords: var, let, const", JSColorSettings.VAL),
-        new AttributesDescriptor("Keywords: function", JSColorSettings.FUNCTION),
+        new AttributesDescriptor("Keywords: function, return", JSColorSettings.FUNCTION),
+        new AttributesDescriptor("Keywords: async", JSColorSettings.ASYNC),
+        new AttributesDescriptor("Keywords: await", JSColorSettings.AWAIT),
+        new AttributesDescriptor("Keywords: if, else", JSColorSettings.IF_ELSE),
+        new AttributesDescriptor("Keywords: switch, case, break", JSColorSettings.SWITCH_CASE),
     };
 
     JSColorSettings.JS_DESCRIPTORS.putAll(JSColorSettings.createAdditionalHlAttrs());
