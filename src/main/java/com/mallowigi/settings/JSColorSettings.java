@@ -39,7 +39,6 @@ public class JSColorSettings extends BaseColorSettings {
   private static final TextAttributesKey ASYNC = JSAnnotator.ASYNC;
   private static final TextAttributesKey AWAIT = JSAnnotator.AWAIT;
   private static final TextAttributesKey IF_ELSE = JSAnnotator.IF_ELSE;
-  private static final TextAttributesKey TRY_CATCH = JSAnnotator.TRY_CATCH;
   private static final TextAttributesKey SWITCH_CASE = JSAnnotator.SWITCH_CASE;
 
   static {
@@ -52,7 +51,6 @@ public class JSColorSettings extends BaseColorSettings {
         new AttributesDescriptor("Keywords: function, return", JSColorSettings.FUNCTION),
         new AttributesDescriptor("Keywords: async", JSColorSettings.ASYNC),
         new AttributesDescriptor("Keywords: await", JSColorSettings.AWAIT),
-        new AttributesDescriptor("Keywords: try, catch, throw", JSColorSettings.TRY_CATCH),
         new AttributesDescriptor("Keywords: if, else", JSColorSettings.IF_ELSE),
         new AttributesDescriptor("Keywords: switch, case, break", JSColorSettings.SWITCH_CASE),
     };

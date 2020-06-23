@@ -70,11 +70,6 @@ public class JSAnnotator extends BaseAnnotator {
       case "else":
         kind = IF_ELSE;
         break;
-      case "try":
-      case "catch":
-      case "throw":
-        kind = TRY_CATCH;
-        break;
     }
     return kind;
   }
