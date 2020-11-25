@@ -16,11 +16,13 @@ public class JSAnnotator extends BaseAnnotator {
   public static final TextAttributesKey NULL = TextAttributesKey.createTextAttributesKey("JS.NULL_UNDEFINED", JSKEYWORD);
   public static final TextAttributesKey VAL = TextAttributesKey.createTextAttributesKey("JS.VAR_DEF", JSKEYWORD);
   public static final TextAttributesKey FUNCTION = TextAttributesKey.createTextAttributesKey("JS.FUNCTION", JSKEYWORD);
+  public static final TextAttributesKey RETURN = TextAttributesKey.createTextAttributesKey("JS.RETURN", JSKEYWORD);
   public static final TextAttributesKey ASYNC = TextAttributesKey.createTextAttributesKey("JS.ASYNC", JSKEYWORD);
   public static final TextAttributesKey AWAIT = TextAttributesKey.createTextAttributesKey("JS.AWAIT", JSKEYWORD);
   public static final TextAttributesKey SWITCH_CASE = TextAttributesKey.createTextAttributesKey("JS.SWITCH_CASE", JSKEYWORD);
   public static final TextAttributesKey IF_ELSE = TextAttributesKey.createTextAttributesKey("JS.IF_ELSE", JSKEYWORD);
   public static final TextAttributesKey TRY_CATCH = TextAttributesKey.createTextAttributesKey("JS.TRY_CATCH", JSKEYWORD);
+  public static final TextAttributesKey FOR = TextAttributesKey.createTextAttributesKey("JS.FOR", JSKEYWORD);
 
   @Override
   protected TextAttributesKey getKeywordKind(@NotNull final PsiElement element) {
@@ -52,8 +54,10 @@ public class JSAnnotator extends BaseAnnotator {
         kind = VAL;
         break;
       case "function":
-      case "return":
         kind = FUNCTION;
+        break;
+      case "return":
+        kind = RETURN;
         break;
       case "async":
         kind = ASYNC;
@@ -69,6 +73,13 @@ public class JSAnnotator extends BaseAnnotator {
       case "if":
       case "else":
         kind = IF_ELSE;
+        break;
+      case "try":
+      case "throw":
+        kind = TRY_CATCH;
+        break;
+      case "for":
+        kind = FOR;
         break;
     }
     return kind;

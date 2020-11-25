@@ -15,7 +15,11 @@ public class PHPAnnotator extends BaseAnnotator {
   public static final TextAttributesKey THIS_SELF = TextAttributesKey.createTextAttributesKey("PHP.THIS_SELF", PHP_KEYWORD);
   public static final TextAttributesKey USE_NAMESPACE = TextAttributesKey.createTextAttributesKey("PHP.USE_NAMESPACE", PHP_KEYWORD);
   public static final TextAttributesKey FUNCTION = TextAttributesKey.createTextAttributesKey("PHP.FUNCTION", PHP_KEYWORD);
+  public static final TextAttributesKey RETURN = TextAttributesKey.createTextAttributesKey("PHP.RETURN", PHP_KEYWORD);
   public static final TextAttributesKey CLASS_EXTENDS = TextAttributesKey.createTextAttributesKey("PHP.CLASS_EXTENDS", PHP_KEYWORD);
+  public static final TextAttributesKey IF_ELSE = TextAttributesKey.createTextAttributesKey("PHP.CLASS_EXTENDS", PHP_KEYWORD);
+  public static final TextAttributesKey TRY_CATCH = TextAttributesKey.createTextAttributesKey("PHP.CLASS_EXTENDS", PHP_KEYWORD);
+  public static final TextAttributesKey FOR = TextAttributesKey.createTextAttributesKey("PHP.FOR", PHP_KEYWORD);
 
   @Override
   protected TextAttributesKey getKeywordKind(@NotNull final PsiElement element) {
@@ -41,9 +45,26 @@ public class PHPAnnotator extends BaseAnnotator {
       case "function":
         kind = FUNCTION;
         break;
+      case "return":
+        kind = RETURN;
+        break;
       case "class":
       case "extends":
         kind = CLASS_EXTENDS;
+        break;
+      case "if":
+      case "else":
+        kind = IF_ELSE;
+        break;
+      case "try":
+      case "catch":
+      case "throw":
+      case "finally":
+        kind = TRY_CATCH;
+        break;
+      case "for":
+      case "foreach":
+        kind = FOR;
         break;
     }
     return kind;

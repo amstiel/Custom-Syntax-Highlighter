@@ -35,6 +35,10 @@ public class PHPColorSettings extends BaseColorSettings {
   private static final TextAttributesKey STATIC_FINAL = PHPAnnotator.STATIC_FINAL;
   private static final TextAttributesKey USE_NAMESPACE = PHPAnnotator.USE_NAMESPACE;
   private static final TextAttributesKey CLASS_EXTENDS = PHPAnnotator.CLASS_EXTENDS;
+  private static final TextAttributesKey RETURN = PHPAnnotator.RETURN;
+  private static final TextAttributesKey IF_ELSE = PHPAnnotator.IF_ELSE;
+  private static final TextAttributesKey TRY_CATCH = PHPAnnotator.TRY_CATCH;
+  private static final TextAttributesKey FOR = PHPAnnotator.FOR;
 
   static {
     PHP_ATTRIBUTES = new AttributesDescriptor[]{
@@ -44,6 +48,10 @@ public class PHPColorSettings extends BaseColorSettings {
         new AttributesDescriptor("Keywords: static, final", PHPColorSettings.STATIC_FINAL),
         new AttributesDescriptor("Keywords: use, namespace", PHPColorSettings.USE_NAMESPACE),
         new AttributesDescriptor("Keywords: class, extends", PHPColorSettings.CLASS_EXTENDS),
+        new AttributesDescriptor("Keywords: return", PHPColorSettings.RETURN),
+        new AttributesDescriptor("Keywords: if, else", PHPColorSettings.IF_ELSE),
+        new AttributesDescriptor("Keywords: try, catch, finally, throw", PHPColorSettings.TRY_CATCH),
+        new AttributesDescriptor("Keywords: for, foreach", PHPColorSettings.FOR),
     };
 
     PHPColorSettings.PHP_DESCRIPTORS.putAll(PHPColorSettings.createAdditionalHlAttrs());
@@ -53,12 +61,16 @@ public class PHPColorSettings extends BaseColorSettings {
     final Map<String, TextAttributesKey> descriptors = new THashMap<>();
     descriptors.put("keyword", PHPColorSettings.PHPKEYWORD);
     descriptors.put("function", PHPColorSettings.FUNCTION);
+    descriptors.put("return", PHPColorSettings.RETURN);
     descriptors.put("var", PHPColorSettings.VARIABLE);
     descriptors.put("use", PHPColorSettings.USE_NAMESPACE);
     descriptors.put("static", PHPColorSettings.STATIC_FINAL);
     descriptors.put("modifier", PHPColorSettings.MODIFIER);
     descriptors.put("this", PHPColorSettings.THIS_SELF);
     descriptors.put("class", PHPColorSettings.CLASS_EXTENDS);
+    descriptors.put("if", PHPColorSettings.IF_ELSE);
+    descriptors.put("try", PHPColorSettings.TRY_CATCH);
+    descriptors.put("for", PHPColorSettings.FOR);
 
     return descriptors;
   }
@@ -93,7 +105,8 @@ public class PHPColorSettings extends BaseColorSettings {
       "\n" +
       "<modifier>public</modifier> <function>function</function> getVar()\n" +
       " {\n" +
-      "    return <this>$this</this>-><var>$variable</var>;\n" +
+      "    <if>if</if> (<this>$this</this>-><var>$variable</var> > 0)" +
+      "        <return>return</return> <this>$this</this>-><var>$variable</var>;\n" +
       " }";
   }
 

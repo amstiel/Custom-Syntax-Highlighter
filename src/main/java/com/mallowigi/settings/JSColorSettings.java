@@ -40,6 +40,9 @@ public class JSColorSettings extends BaseColorSettings {
   private static final TextAttributesKey AWAIT = JSAnnotator.AWAIT;
   private static final TextAttributesKey IF_ELSE = JSAnnotator.IF_ELSE;
   private static final TextAttributesKey SWITCH_CASE = JSAnnotator.SWITCH_CASE;
+  private static final TextAttributesKey TRY_CATCH = JSAnnotator.TRY_CATCH;
+  private static final TextAttributesKey RETURN = JSAnnotator.RETURN;
+  private static final TextAttributesKey FOR = JSAnnotator.FOR;
 
   static {
     JS_ATTRIBUTES = new AttributesDescriptor[]{
@@ -48,11 +51,14 @@ public class JSColorSettings extends BaseColorSettings {
         new AttributesDescriptor("Keywords: debugger", JSColorSettings.DEBUGGER),
         new AttributesDescriptor("Keywords: null, undefined", JSColorSettings.NULL),
         new AttributesDescriptor("Keywords: var, let, const", JSColorSettings.VAL),
-        new AttributesDescriptor("Keywords: function, return", JSColorSettings.FUNCTION),
+        new AttributesDescriptor("Keywords: function", JSColorSettings.FUNCTION),
+        new AttributesDescriptor("Keywords: return", JSColorSettings.RETURN),
         new AttributesDescriptor("Keywords: async", JSColorSettings.ASYNC),
         new AttributesDescriptor("Keywords: await", JSColorSettings.AWAIT),
         new AttributesDescriptor("Keywords: if, else", JSColorSettings.IF_ELSE),
         new AttributesDescriptor("Keywords: switch, case, break", JSColorSettings.SWITCH_CASE),
+        new AttributesDescriptor("Keywords: try, throw", JSColorSettings.TRY_CATCH),
+        new AttributesDescriptor("Keywords: for", JSColorSettings.FOR),
     };
 
     JSColorSettings.JS_DESCRIPTORS.putAll(JSColorSettings.createAdditionalHlAttrs());
@@ -69,6 +75,7 @@ public class JSColorSettings extends BaseColorSettings {
     descriptors.put("null", JSColorSettings.NULL);
     descriptors.put("debugger", JSColorSettings.DEBUGGER);
     descriptors.put("import", JSColorSettings.MODULE);
+    descriptors.put("if", JSColorSettings.IF_ELSE);
 
     return descriptors;
   }
@@ -93,7 +100,7 @@ public class JSColorSettings extends BaseColorSettings {
         "<function>function</function> <function_name>foo</function_name>() {\n" +
         "  <val>var</val> <local_variable>x</local_variable> = 10;\n" +
         "  <this>this</this>.x = <null>null</null>;\n" +
-        "  <keyword>if</keyword> (<local_variable>x</local_variable> === <null>undefined</null>) {\n" +
+        "  <if>if</if> (<local_variable>x</local_variable> === <null>undefined</null>) {\n" +
         "    <debugger>debugger</debugger>;\n" +
         "  }\n" +
         "}";
